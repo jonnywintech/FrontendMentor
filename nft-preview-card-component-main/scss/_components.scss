@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+@mixin breakpoint($value) {
+  @if $value == "phone" {
+    @media only screen and (min-width: 120px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $value == "tablet" {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $value == "touch" {
+    @media only screen and (min-width: 120px) and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $value == "desktop" {
+    @media only screen and (min-width: 1025px) {
+      @content;
+    }
+  } @else {
+    @media only screen and (max-width: $value) {
+      @content;
+    }
+  }
+}
+
+/////// fontweight //////
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+//// screen reader only///
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  top: auto;
+  overflow: hidden;
+}
+//## Colors
+
+//### Primary
+
+$softBlue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+
+//### Neutral
+
+$mainBg: hsl(217, 54%, 11%);
+$cardBg: hsl(216, 50%, 16%);
+$blueLine: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+///body
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  background-color: $mainBg;
+}
