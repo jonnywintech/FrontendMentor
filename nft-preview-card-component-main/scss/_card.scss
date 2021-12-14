@@ -1,0 +1,138 @@
+.card {
+  @include flex(column, center, center);
+  flex-grow: 2;
+}
+
+.attribution {
+  color: $white;
+  padding-bottom: 20px;
+  opacity: 0.7;
+  a {
+    color: $softBlue;
+    &:hover {
+      color: $cyan;
+    }
+  }
+}
+
+.card__body {
+  max-width: 350px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 15px;
+  background-color: $cardBg;
+}
+
+.card__image {
+  height: 302px;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card__link {
+  color: $white;
+  text-decoration: none;
+  transition: 0.3s ease;
+  &:hover {
+    color: $cyan;
+  }
+}
+
+.card__link--bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    background-color: rgba($color: $blueLine, $alpha: 0.5);
+    background-image: url("../images/icon-view.svg");
+    display: inline-block;
+  }
+}
+
+.card__title {
+  margin-top: 30px;
+  font-weight: $bold;
+}
+
+.card__text {
+  color: $softBlue;
+  margin-top: 25px;
+}
+
+.card__middle {
+  padding: 30px 0 22px;
+  @include flex(row, space-between, center);
+}
+
+.card__price {
+  color: $cyan;
+}
+
+.card__price::before {
+  content: "";
+  background-image: url("../images/icon-ethereum.svg");
+  width: 25px;
+  height: 17px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__time {
+  color: $softBlue;
+}
+
+.card__time::before {
+  content: "";
+  background-image: url("../images/icon-clock.svg");
+  width: 25px;
+  height: 14px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__divider {
+  padding: 0;
+  margin: 0;
+  background-color: $blueLine;
+  border: 1px solid $blueLine;
+}
+
+.card__creator {
+  @include flex(row, flex-start, center);
+  margin-top: 15px;
+}
+
+.card__avatar {
+  border-radius: 50%;
+  width: 35px;
+  border: 1px solid $white;
+  display: inline-block;
+  margin-right: 17px;
+}
+
+.card__sub-text {
+  color: $softBlue;
+}
+
+.card--avatar__link {
+  color: $white;
+  transform: 0.3s ease;
+  margin-left: 5px;
+  &:hover {
+    cursor: pointer;
+    color: $cyan;
+  }
+}
+
+.mobile {
+  display: none;
+  @include breakpoint(phone) {
+    display: block;
+  }
+}

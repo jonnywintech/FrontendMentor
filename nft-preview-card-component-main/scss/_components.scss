@@ -67,4 +67,12 @@ body {
   font-family: "Outfit", sans-serif;
   font-size: 18px;
   background-color: $mainBg;
+  @include flex(column, center, center);
+  height: 100vh;
+}
+
+.has-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
