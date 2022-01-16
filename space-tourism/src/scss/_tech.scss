@@ -169,6 +169,7 @@ color: #D0D6F9;
 .tech__vehicle-img{
     width:100%;
     min-width:300px;
+    height: 450px;
     @include breakpoint(touch){
         width: 100%;
     }
