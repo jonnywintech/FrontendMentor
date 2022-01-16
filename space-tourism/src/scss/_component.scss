@@ -22,12 +22,14 @@
   }
 }
 
+
+
 body {
-  margin: 0;
-  padding: 0;
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 14px;
-  height: 100vh; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  text-rendering: optimizeLegibility;
   background-image: url('../images/background-home-desktop.jpg');
   @include breakpoint(touch){
     background-image: url('../images/background-home-tablet.jpg');
@@ -110,4 +112,10 @@ button {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.hide{
+  display: none;
+  visibility: hidden;
+  opacity: 0;
 }

@@ -1,0 +1,189 @@
+.tech{
+    width: 100%;
+    height: 100%;
+    display: none;
+    .wrap{
+        padding: 0 0 0 165px;
+    }
+    
+    @include breakpoint(touch){
+        .wrap{
+            padding: 0;
+        }
+    }
+    
+}
+
+
+
+.tech__headline{
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
+    text-transform: uppercase;
+    padding: 76px 0 26px;
+    color: $white;
+    @include breakpoint(touch){
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 3.375px;
+        margin-left: 24px;
+    }
+}
+
+.tech__number{
+    margin-right: 24px;
+    opacity: 0.25;
+}
+
+.tech__container{
+    width: 100%;
+    // height: calc(100vh - 235px);
+    @include flexDirWrap(row,nowrap);
+    justify-content:flex-end;
+    align-items: center;
+    color: $white;
+    gap: 80px;
+    max-height: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition:all $dur $ease;
+    display: none;
+    @include breakpoint (touch){
+        flex-direction: column;
+        margin-top: 60px;
+    }
+}
+
+.tech__pages{
+    @include flexDirWrap(column,nowrap);
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 15%;
+    @include breakpoint(touch){
+        order: 2;
+        padding: 55px 0 44px;
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+.tech__page-no{
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    border-radius: 50%;
+    font-family: 'Bellefair', sans-serif;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 2px;
+    border: 1px solid rgba($color: $white, $alpha: 0.25);
+    &:hover{
+        border: 2px solid $white;
+    }
+    &:active{
+        transform: scale(0.9);
+    }
+    @include breakpoint(touch){
+        width: 60px;
+        height: 60px;
+        letter-spacing:1.5px;
+        font-size: 24px;
+        line-height: 28px;
+
+    }
+}
+
+.tech__page-no--active{
+    background-color: $white;
+    border: 1px solid $white;
+    color: $main;
+}
+
+.tech__info{
+    padding-right: 50px;
+    width: 55%;
+    @include breakpoint(touch){
+        order: 3;
+        width: 100%;
+        max-width: 485px;
+        text-align: center;
+        padding: 0 0 50px;
+    }
+}
+
+.tech__prefix{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+    color: #D0D6F9;
+    text-transform: uppercase;
+}
+
+
+
+.tech__title{
+    padding: 11px 0 17px;
+    font-family: 'Bellefair', sans-serif;
+    font-size: 56px;
+    line-height: 64px;
+    text-transform: uppercase;
+    @include breakpoint (touch){
+        padding: 16px 0 ;
+        font-size: 40px;
+        line-height: 46px;
+    }
+}
+
+.tech__text{
+font-size: 18px;
+line-height: 32px;
+color: #D0D6F9;
+@include breakpoint(touch){
+    font-size: 16px;
+    line-height: 28px;
+}
+}
+
+
+.tech__image{
+    @include breakpoint(touch){
+        width: 100%;
+        order: 1;
+        &>picture{
+            width: 100%;
+        }
+    }
+}
+
+
+.tech__vehicle-img{
+    width:100%;
+    min-width:300px;
+    @include breakpoint(touch){
+        width: 100%;
+    }
+}
+
+
+.tech__container--active{
+    max-height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition:all $dur $ease;
+    display: flex;
+}
+
+
+.section--active{
+    display: block;
+}

@@ -1,8 +1,8 @@
 {
-	"name": "vega-it-internship-starter",
+	"name": "frontend-mentor-space-tourism",
 	"version": "1.0.0",
-	"description": "Vega IT - internship starter",
-	"author": "Vega IT",
+	"description": "Space Tourism Webpage",
+	"author": "Nikola Stankovic",
 	"license": "ISC",
 	"devDependencies": {
 		"autoprefixer": "^10.4.0",
@@ -14,6 +14,7 @@
 		"gulp-sass": "^4.1.1",
 		"gulp-sass-lint": "^1.4.0",
 		"gulp-stylelint": "^13.0.0",
+		"npm-check-updates": "^12.1.0",
 		"postcss": "^8.3.11",
 		"stylelint": "^13.13.1",
 		"swiper": "^7.3.1",

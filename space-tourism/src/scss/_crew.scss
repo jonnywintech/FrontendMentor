@@ -1,0 +1,183 @@
+.crew{
+    width: 100%;
+    display: none;
+    .wrap{
+        max-width: 100%;
+    }
+}
+
+.crew__wrap{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide{
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper{
+    width: 100%;
+    height: 100%;
+
+   
+}
+
+.crew__container{
+    width: 100%;
+    height: 100%;
+    @include flexDirWrap(row,nowrap);
+    justify-content:space-between;
+    align-content: flex-end;
+    gap: 80px;
+    @include breakpoint (touch){
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+}
+
+.crew__info{
+    @include flexDirWrap(column,nowrap);
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 65%;
+    @include breakpoint(touch){
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.crew__image-box{
+    width: 35%;
+    height:90vh;
+    padding-top: 62px;
+    @include flexDirWrap(column,nowrap);
+    justify-content: flex-end;
+    @include breakpoint (touch){
+        height: 50%;
+        align-self: center;
+        width: 50%;
+        justify-content:flex-start;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+.crew__image{
+    width: 100%;
+    max-width:568px;
+    height: auto;
+    float: bottom;
+    min-width: 250px;
+    @include breakpoint(touch){
+        align-self: flex-start;
+        justify-self: flex-start;
+    }
+}
+
+.crew__headline{
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
+    color:$white;
+    text-transform:  uppercase;
+    @include breakpoint(touch){
+        margin-top: 40px;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 3.375px;
+    }
+}
+
+.crew__number{
+    opacity: 0.25;
+    margin-right: 12px;
+
+}
+
+.crew__important{
+    @include breakpoint(touch){
+        align-self: center;
+    }
+}
+
+.crew__prefix{
+    font-family: 'Bellefair', sans-serif;
+    font-size: 32px;
+    line-height: 37px;
+    text-transform: uppercase;
+    color: $white;
+    opacity: 0.5;
+    @include breakpoint(touch){
+        padding-top: 60px;
+        font-size: 24px;
+        line-height: 28px;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.crew__title{
+    font-family: 'Bellefair',sans-serif;
+    font-size: 56px;
+    line-height: 64px;
+    text-transform: uppercase;
+    margin-bottom: 27px;
+    color: $white;
+    @include breakpoint(touch){
+        padding: 8px 0 16px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.crew__text{
+    font-family: 'Barlow',sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: #D0D6F9;
+    margin-right: 24px;
+    width: 100%;
+    max-width: 50ch;
+    @include breakpoint(touch){
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        align-self: center;
+    }
+}
+.swiper-pagination{
+    position: relative;
+    display:flex;
+    justify-content:flex-start;
+    gap: 24px;
+    @include breakpoint(touch){
+        justify-content: center;
+        margin-top: 40px;
+    }
+}
+
+.swiper-slide{
+    padding: 0 !important;
+    width:100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+}
+
+.swiper-pagination-bullet{
+    transform:scale(2);
+}
+
+.swiper-pagination-bullet-active{
+    background-color: $white;
+}
