@@ -51,28 +51,28 @@ const appTwo = ()=>{
 
         ///testing
 
-        const ob1 = {
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontSize: 14,
-            "-webkit-font-smoothing": "antialiased",
-            "-moz-osx-font-smoothing": "grayscale",
-            textRendering: "optimizeLegibility",
-            backgroundImage: "url('../images/background-home-desktop.jpg')",
-          }
-        const ob2 = {
-            fontFamily: "'Barlow Condensed', sans-serif",
-            fontSize: 14,
-            "-webkit-font-smoothing": "antialiased",
-            "-moz-osx-font-smoothing": "grayscale",
-            textRendering: "optimizeLegibility",
-            backgroundImage: "url('../images/background-destination-desktop.jpg')",
-          }
-        
+        // cta button on hero section 
+        const expBtn =document.querySelector('.hero__btn');
+        expBtn.addEventListener('click',()=>{
+            sections[0].classList.remove('section--active');
+            sections[1].classList.add('section--active');
+            navLinks[0].classList.remove('header__item--active');
+            navLinks[1].classList.add('header__item--active');
+            page.style.backgroundImage="url('images/background-destination-desktop.jpg')"
+            if(mediaTablet.matches){
+             page.style.backgroundImage="url(images/background-destination-tablet.jpg')"
+            }
+            if(mediaPhone.matches){
+             page.style.backgroundImage="url('images/background-destination-mobile.jpg')"
+            }
+
+        })
+
 //testing
     navLinks.forEach((item,indx)=>{
         item.addEventListener('click',()=>{
-            const mediaTablet = window.matchMedia('(max-width: 1024px)');
-            const mediaPhone = window.matchMedia('(max-width: 768px)');
+        const mediaTablet = window.matchMedia('(max-width: 1024px)');
+        const mediaPhone = window.matchMedia('(max-width: 768px)');
         const headerActive = document.querySelector('.header__item--active');
            if(item.classList.contains('header__item--active')){
                return
@@ -119,10 +119,19 @@ const appTwo = ()=>{
                                    }
                                 break;
                }
+               //automaticly close meny when its clicked
+               ulList.classList.remove('header__list--active');
+               icon.classList.remove('icon-icon-close');
+               icon.classList.add('icon-icon-hamburger');
            }
         })
     })
 }
+
+//explore button on main page
+
+
+
 
 
 console.log(navLinks)
