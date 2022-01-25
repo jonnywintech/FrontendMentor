@@ -24,21 +24,6 @@
 
 
 
-body {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; 
-  text-rendering: optimizeLegibility;
-  background-image: url('../images/background-home-desktop.jpg');
-  @include breakpoint(touch){
-    background-image: url('../images/background-home-tablet.jpg');
-  }
-  @include breakpoint(phone){
-    background-image: url('../images/background-home-mobile.jpg');
-  }
-
-}
 
 
 ////// colors brand //////
@@ -118,4 +103,22 @@ button {
   display: none;
   visibility: hidden;
   opacity: 0;
+}
+
+
+body {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; 
+  text-rendering: optimizeLegibility;
+  background-color:$main;
+  background-image: url('../images/background-home-desktop.jpg');
+  @include breakpoint(touch){
+    background-image: url('../images/background-home-tablet.jpg');
+  }
+  @include breakpoint(phone){
+    background-image: url('../images/background-home-mobile.jpg');
+  }
+  
 }
