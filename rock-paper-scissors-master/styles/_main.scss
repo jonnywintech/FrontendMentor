@@ -1,0 +1,98 @@
+body{
+background: rgb(29,52,84);
+background: radial-gradient(circle, rgba(29,52,84,1) 0%, rgba(20,23,58,1) 89%);
+font-family: sans-serif;
+height: 100vh;
+}
+
+.container{
+    @include flexDirWrap(column,nowrap);
+    width: 100%;
+    max-width:800px;
+    justify-content: center;
+    align-items: center;
+}
+
+.score{
+    @include flexDirWrap(row,nowrap);
+    width: 100%;
+    max-width:700px;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgba(255, 255, 255, 0.568);
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.score__text{
+    width: 30%;
+    color: $white;
+    text-transform: uppercase;
+
+}
+
+.score__display{
+background-color: $white;
+ align-self: stretch;
+ width: 10%;
+ @include flexDirWrap(column, nowrap);
+ align-items: center;
+ justify-content: center;
+ border-radius: 2px;
+}
+
+.score__number{
+    color: #57556b;
+    font-size: 25px;
+}
+
+.buttons{
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 400px;
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons__button{
+    width: 150px;
+    height: 150px;
+    border: 20px solid $white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3e3e3;
+    -moz-box-shadow:    inset 1 1 10px #000000;
+    -webkit-box-shadow: inset 1 1 10px #000000;
+    box-shadow:         inset 1 1 10px #000000;
+    transition: $dur $ease;
+    &:hover{
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(0.95);
+    }
+}
+
+.buttons__button--paper{
+    border-color: #546ff0;
+    
+}
+
+.buttons__button--scissors{
+    
+    border-color: #eda316;
+}
+
+.buttons__button--rock{
+align-self: flex-end;
+justify-self: center;
+align-content: center;
+border-color: #d93355;
+
+}
+
