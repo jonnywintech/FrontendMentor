@@ -183,6 +183,11 @@ button:hover {
   background-position: center center;
 }
 
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 body {
   background: #1d3454;
   background: radial-gradient(circle, #1d3454 0%, #14173a 89%);
@@ -234,16 +239,28 @@ body {
 }
 
 .score__text {
-  width: 30%;
   color: #ffffff;
   text-transform: uppercase;
+  font-size: 25px;
+}
+
+.score__message {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 35px;
+  text-transform: uppercase;
+  color: #d93355;
 }
 
 .score__display {
   background-color: #ffffff;
   -ms-flex-item-align: stretch;
       align-self: stretch;
-  width: 10%;
+  width: 110px;
+  margin-left: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -264,13 +281,14 @@ body {
 
 .score__number {
   color: #57556b;
-  font-size: 25px;
+  font-size: 35px;
+  line-height: 40px;
 }
 
 .buttons {
   width: 100%;
-  max-width: 450px;
   height: 100%;
+  max-width: 450px;
   max-height: 400px;
   position: relative;
   padding: 40px 0;
@@ -279,6 +297,16 @@ body {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  background-image: url("../images/bg-triangle.svg");
+  background-size: 62%;
+  background-position-y: 70%;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .buttons {
+    background-position-y: 110px;
+  }
 }
 
 .buttons__button {
@@ -312,12 +340,34 @@ body {
           transform: scale(0.95);
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .buttons__button {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+  }
+}
+
 .buttons__button--paper {
   border-color: #546ff0;
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .buttons__button--paper {
+    left: 0;
+    top: 80px;
+  }
+}
+
 .buttons__button--scissors {
   border-color: #eda316;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .buttons__button--scissors {
+    right: 0;
+    top: 80px;
+  }
 }
 
 .buttons__button--rock {
@@ -328,5 +378,139 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   border-color: #d93355;
+}
+
+.rules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  padding: 10px 0px;
+}
+
+.rules__btn {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 8px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.rules__btn:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.rules__box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.623);
+  -webkit-animation: model 1s;
+          animation: model 1s;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.rules__container {
+  margin: 0 auto;
+  position: relative;
+  width: 450px;
+  top: 50%;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+
+.rules__image {
+  width: 450px;
+}
+
+.rules__close {
+  position: absolute;
+  top: -20px;
+  left: -50px;
+  -webkit-filter: brightness(3000) invert(0);
+          filter: brightness(3000) invert(0);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+@-webkit-keyframes model {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes model {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.rules__text {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: crimson;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.attribution {
+  color: #ffffff;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #87c5ec;
+}
+
+.buttons__button--active {
+  -webkit-filter: drop-shadow(0 0 2.75rem #ffffff);
+          filter: drop-shadow(0 0 2.75rem #ffffff);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 /*# sourceMappingURL=style.css.map */

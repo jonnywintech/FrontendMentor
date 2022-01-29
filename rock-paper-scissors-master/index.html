@@ -22,23 +22,36 @@
     <h2 class="score__headline">paper</h2>
     <h2 class="score__headline">scissors</h2>
   </div>
+  <span class="score__message"></span>
   <div class="score__display">
     <span class="score__span">score</span>
-    <span class="score__number">0</span>
+    <span class="score__number"></span>
   </div>
 </div>
-
-<div class="buttons">
-  <button class="buttons__button buttons__button--paper"><img src="./images/icon-paper.svg" alt="paper" class="buttons__img"></button>
+    <!-- hands buttons  -->
+<div class="buttons has-cover">
+  <button class="buttons__button buttons__button--paper "><img src="./images/icon-paper.svg" alt="paper" class="buttons__img"></button>
   <button class="buttons__button buttons__button--rock"><img src="./images/icon-rock.svg" alt="rock" class="buttons__img"></button>
   <button class="buttons__button buttons__button--scissors"><img src="./images/icon-scissors.svg" alt="scissors" class="buttons__img"></button>
+
 </div>
 
-
+  <!-- rules for playing game -->
 <div class="rules">
   <button class="rules__btn">rules</button>
-</div>
+  <span class="rules__text"></span>
 
+
+<div class="rules__box hide">
+  <div class="rules__container">
+    
+  <button class="rules__close"><img src="./images/icon-close.svg" alt="close" class="rules__svg"></button>
+  <img src="./images/image-rules.svg" alt="rules" class="rules__image">
+  </div>
+
+
+</div>
+</div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Nikola Stankovic</a>.
@@ -47,6 +60,6 @@
 </div>
 
 
-  
+  <script src="index.js"></script>
 </body>
 </html>

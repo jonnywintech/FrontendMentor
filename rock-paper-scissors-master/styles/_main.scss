@@ -25,16 +25,30 @@ height: 100vh;
 }
 
 .score__text{
-    width: 30%;
+    // width: 30%;
     color: $white;
     text-transform: uppercase;
+    font-size: 25px;
 
+}
+
+.score__message{
+    // position: relative;
+    // right: 10%;
+    // text-align: center;
+    justify-self: center;
+    align-self: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #d93355;
+    
 }
 
 .score__display{
 background-color: $white;
  align-self: stretch;
- width: 10%;
+ width: 110px;
+ margin-left: 20px;
  @include flexDirWrap(column, nowrap);
  align-items: center;
  justify-content: center;
@@ -43,18 +57,26 @@ background-color: $white;
 
 .score__number{
     color: #57556b;
-    font-size: 25px;
+    font-size: 35px;
+    line-height: 40px;
 }
 
 .buttons{
     width: 100%;
-    max-width: 450px;
     height: 100%;
+    max-width: 450px;
     max-height: 400px;
     position: relative;
     padding: 40px 0;
     display: flex;
     justify-content: space-around;
+    background-image: url("../images/bg-triangle.svg");
+    background-size: 62%;
+    background-position-y: 70%;
+    color: $white;
+    @include breakpoint(phone){
+        background-position-y: 110px;
+    }
 }
 
 .buttons__button{
@@ -76,16 +98,28 @@ background-color: $white;
     &:active{
         transform: scale(0.95);
     }
+    @include breakpoint(phone){
+      position: absolute;
+      width: 120px;
+      height: 120px;
+    }
 }
 
 .buttons__button--paper{
     border-color: #546ff0;
+    @include breakpoint(phone){
+        left: 0;
+        top: 80px;
+    }
     
 }
 
 .buttons__button--scissors{
-    
     border-color: #eda316;
+    @include breakpoint(phone){
+        right: 0;
+        top: 80px;
+    }
 }
 
 .buttons__button--rock{
@@ -96,3 +130,101 @@ border-color: #d93355;
 
 }
 
+.rules{
+    display: flex;
+    flex-direction:row-reverse;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    padding: 10px 0px;
+
+}
+
+.rules__btn{
+    background-color: transparent;
+    border: 1px solid $white;
+    color: $white;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: $dur $ease;
+    &:active{
+
+        transform: scale(0.9);
+    }
+
+}
+
+@keyframes rotate-center{
+    0%{transform:rotate(0)}
+    100%{transform:rotate(360deg)}
+}
+
+.rules__box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.623);
+    animation: model 1s;
+    transition: $dur $ease;
+}
+
+.rules__container{
+    margin: 0 auto;
+    position: relative;
+    width:450px;
+    top: 50%;
+    transform: translateY(-40%);
+}
+
+.rules__image{
+
+    width:450px;
+}
+
+.rules__close{
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    filter:  brightness(3000) invert(0);
+    transform: scale(1.2)
+}
+
+@keyframes model {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .rules__text{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: crimson;
+      font-size:  20px;
+      text-transform:  uppercase;
+
+  }
+
+  .attribution{
+      color: $white;
+      a{
+        text-decoration: none;
+        color: $lightBlue;
+    }
+    
+  }
+
+
+
+  .buttons__button--active{
+    filter: drop-shadow(0 0 2.75rem $white);
+    transform: scale(1.1);
+  }
