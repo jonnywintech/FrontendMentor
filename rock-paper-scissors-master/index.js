@@ -59,6 +59,7 @@ hands.forEach((button,index)=>{
         //events that happen in case you loose
         function looseCase(){
             gameOver.innerText="Game Over";
+            draw.innerText="";
             score = 0;
             highscore.innerText=score;
         }
