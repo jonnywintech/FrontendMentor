@@ -152,6 +152,12 @@ border-color: #d93355;
 
 }
 
+.buttons__img{
+
+pointer-events: none;
+
+}
+
 .rules{
     display: flex;
     flex-direction:row-reverse;
