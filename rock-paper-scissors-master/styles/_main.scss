@@ -14,7 +14,7 @@ height: 100vh;
 }
 
 .score{
-    @include flexDirWrap(row,nowrap);
+    @include flexDirWrap(row,wrap);
     width: 100%;
     max-width:700px;
     justify-content: space-between;
@@ -22,6 +22,7 @@ height: 100vh;
     border: 2px solid rgba(255, 255, 255, 0.568);
     padding: 10px 15px;
     border-radius: 5px;
+    transition: all $dur $ease;
 }
 
 .score__text{
@@ -29,6 +30,12 @@ height: 100vh;
     color: $white;
     text-transform: uppercase;
     font-size: 25px;
+    @include breakpoint(phone){
+        margin-right: 10px;
+        font-size: 20px;
+        width: 50%;
+        order: 1;
+    }
 
 }
 
@@ -41,6 +48,15 @@ height: 100vh;
     font-size: 35px;
     text-transform: uppercase;
     color: #d93355;
+    @include breakpoint(phone){
+        order: 3;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        transition: all $dur $ease;
+        min-height: 51px;
+        font-weight: $bold;
+    }
     
 }
 
@@ -53,6 +69,12 @@ background-color: $white;
  align-items: center;
  justify-content: center;
  border-radius: 2px;
+ @include breakpoint (phone){
+   
+     max-width: 35%;
+     order: 2;
+     margin-left: 0;
+ }
 }
 
 .score__number{
@@ -225,16 +247,41 @@ border-color: #d93355;
       color: crimson;
       font-size:  20px;
       text-transform:  uppercase;
+      font-weight: $bold;
 
   }
 
   .attribution{
-      color: $white;
+      color: $formGrey;
       a{
         text-decoration: none;
-        color: $lightBlue;
+        
+            background: 50% 100% / 50% 50% no-repeat
+                        radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-family: "Source Sans Pro", sans-serif;
+            animation: reveal 3000ms ease-in-out forwards 200ms,
+                       glow 5000ms linear infinite 2500ms;
+          
+            
+          
     }
     
+  }
+  @keyframes reveal {
+    80%{
+      letter-spacing: 8px;
+    }
+    100% {
+      background-size: 200% 200%;
+    }
+  }
+  @keyframes glow {
+    40% {
+      text-shadow: 0 0 8px #fff;
+    }
   }
 
 
@@ -243,3 +290,7 @@ border-color: #d93355;
     filter: drop-shadow(0 0 2.75rem $white);
     transform: scale(1.1);
   }
+
+
+  //test
+
