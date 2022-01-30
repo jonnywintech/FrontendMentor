@@ -432,6 +432,12 @@ body {
   padding: 10px 0px;
 }
 
+.buttons__img{
+
+pointer-events: none;
+
+}
+
 .rules__btn {
   background-color: transparent;
   border: 1px solid #ffffff;
@@ -572,8 +578,10 @@ body {
   background-clip: text;
   color: transparent;
   font-family: "Source Sans Pro", sans-serif;
-  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 5000ms linear infinite 2500ms;
-          animation: reveal 3000ms ease-in-out forwards 200ms, glow 5000ms linear infinite 2500ms;
+  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms,
+ glow 5000ms linear infinite 2500ms;
+          animation: reveal 3000ms ease-in-out forwards 200ms,
+ glow 5000ms linear infinite 2500ms;
 }
 
 @-webkit-keyframes reveal {
