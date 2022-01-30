@@ -305,7 +305,7 @@ body {
 
 @media only screen and (min-width: 120px) and (max-width: 767px) {
   .buttons {
-    background-position-y: 110px;
+    background-position-y: 115px;
   }
 }
 
@@ -456,8 +456,23 @@ body {
           transform: translateY(-40%);
 }
 
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .rules__container {
+    width: 100%;
+  }
+}
+
 .rules__image {
   width: 450px;
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .rules__image {
+    width: 100%;
+    max-width: 450px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .rules__close {
@@ -468,6 +483,15 @@ body {
           filter: brightness(3000) invert(0);
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+@media only screen and (min-width: 120px) and (max-width: 767px) {
+  .rules__close {
+    top: -20px;
+    left: 10px;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 @-webkit-keyframes model {

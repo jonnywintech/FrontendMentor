@@ -75,7 +75,7 @@ background-color: $white;
     background-position-y: 70%;
     color: $white;
     @include breakpoint(phone){
-        background-position-y: 110px;
+        background-position-y: 115px;
     }
 }
 
@@ -179,11 +179,20 @@ border-color: #d93355;
     width:450px;
     top: 50%;
     transform: translateY(-40%);
+    @include breakpoint(phone){
+        width: 100%;
+    }
 }
 
 .rules__image{
 
     width:450px;
+    @include breakpoint(phone){
+        width: 100%;
+        max-width: 450px;
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 .rules__close{
@@ -191,7 +200,13 @@ border-color: #d93355;
     top: -20px;
     left: -50px;
     filter:  brightness(3000) invert(0);
-    transform: scale(1.2)
+    transform: scale(1.2);
+    @include breakpoint(phone){
+        top: -20px;
+        left: 10px;
+        transform: scale(1.5);
+        
+    }
 }
 
 @keyframes model {
